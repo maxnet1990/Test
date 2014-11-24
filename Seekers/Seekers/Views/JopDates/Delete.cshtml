@@ -1,0 +1,53 @@
+﻿@model Seekers.Models.JopDate
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>JopDate</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.displayJopDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.displayJopDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.startDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.startDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.deadline)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.deadline)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.jop.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.jop.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.category.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.category.name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

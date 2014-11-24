@@ -1,0 +1,67 @@
+﻿@model Seekers.Models.JopDate
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>JopDate</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.displayJopDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.displayJopDate)
+            @Html.ValidationMessageFor(model => model.displayJopDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.startDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.startDate)
+            @Html.ValidationMessageFor(model => model.startDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.deadline)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.deadline)
+            @Html.ValidationMessageFor(model => model.deadline)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.jopId, "jop")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("jopId", String.Empty)
+            @Html.ValidationMessageFor(model => model.jopId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.categoryId, "category")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("categoryId", String.Empty)
+            @Html.ValidationMessageFor(model => model.categoryId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
